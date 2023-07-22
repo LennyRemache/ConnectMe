@@ -2,9 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    `mongodb+srv://lennyjremache:${process.env.MONGODB_PW}@connectme.feyzuqn.mongodb.net/?retryWrites=true&w=majority`
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Connected to MongoDB");
   })
