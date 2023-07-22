@@ -1,9 +1,11 @@
-const express = require("express");
+import express from "express";
 //const bodyParser = require("body-parser");
-const cors = require("cors");
-const multer = require("multer");
-const { fileURLToPath } = require("url");
-const path = require("path");
+import cors from "cors";
+import multer from "multer";
+import { fileURLToPath } from "url";
+import path from "path";
+import { register } from "./controllers/auth.js";
+import { Connect } from "./db/mongoose.js";
 
 // CONFIGURATIONS
 const __filename = fileURLToPath(import.meta.url);
@@ -12,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const app = express(); // initializing express server side application
 
 // connecting server to the database
-require("./db/mongoose"); // needed when recieving data from front-end into the back-end that will be pushed into the db vice versa
+Connect(); // needed when recieving data from front-end into the back-end that will be pushed into the db vice versa
 
 // needed to fix error where post request body is undefined and causes validationError
 app.use(express.json());
@@ -34,7 +36,6 @@ const upload = multer({ storage: storage }); // anytime a file is uploaded this 
 
 /* ROUTES WITH FILES */
 // (route, middleware, controller)
-const register = require("./controllers/auth");
 app.post("/auth/register", upload.single("picture"), register); // Routes HTTP POST requests to the specified path with the specified callback functions
 
 app.listen(3001, (req, res) => {

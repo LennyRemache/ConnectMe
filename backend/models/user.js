@@ -1,5 +1,6 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const userSchema = new mongoose.Schema(
   {
@@ -53,6 +54,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true } // provides dates and time of when a new user is CRUD
 );
 
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+export const User = mongoose.model("User", userSchema);
