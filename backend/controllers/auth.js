@@ -16,5 +16,9 @@ const register = async (req, res) => {
       description,
       links,
     } = req.body;
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 };
+
+module.exports = register;
