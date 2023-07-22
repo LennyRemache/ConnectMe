@@ -10,9 +10,6 @@ require("./db/mongoose"); // needed when recieving data from front-end into the 
 app.use(express.json());
 app.use(cors()); // makes it possible to make api calls from the client side
 
-const userRoute = require("./routes/user");
-app.use("/users", userRoute);
-
 app.listen(3001, (req, res) => {
   console.log("Server Running at Port 3001");
 });
