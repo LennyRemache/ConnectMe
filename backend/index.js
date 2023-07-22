@@ -6,8 +6,9 @@ import { fileURLToPath } from "url";
 import path from "path";
 import { register } from "./controllers/auth.js";
 import { Connect } from "./db/mongoose.js";
+import authRoutes from "./routes/auth.js";
 
-// CONFIGURATIONS
+/* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -19,7 +20,7 @@ Connect(); // needed when recieving data from front-end into the back-end that w
 // needed to fix error where post request body is undefined and causes validationError
 app.use(express.json());
 app.use(cors()); // makes it possible to make api calls from the client side
-app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+app.use("/assets", express.static(path.join(__dirname, "public/assets"))); // set the dir of where we keep our assets stored locally
 
 /* FILE STORAGE */
 const storage = multer.diskStorage({
@@ -37,6 +38,9 @@ const upload = multer({ storage: storage }); // anytime a file is uploaded this 
 /* ROUTES WITH FILES */
 // (route, middleware, controller)
 app.post("/auth/register", upload.single("picture"), register); // Routes HTTP POST requests to the specified path with the specified callback functions
+
+/* ROUTES */
+app.use("/auth", authRoutes);
 
 app.listen(3001, (req, res) => {
   console.log("Server Running at Port 3001");
