@@ -5,7 +5,8 @@ import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 
 function Form() {
-  const [registered, setRegistered] = useState(false);
+  const [registered, setRegistered] = useState(true);
+
   return (
     <>
       <div className="formContainer">
@@ -22,9 +23,13 @@ function Form() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<LogIn />} />
             </Routes>
+            <Link
+              to={!registered ? "/signup" : "/login"}
+              onClick={() => setRegistered(!registered)}
+            >
+              {!registered ? "Sign Up" : "Log In"}
+            </Link>
           </div>
-          <Link to="/signup">Signup</Link>
-          <Link to="/login">Log In</Link>
         </form>
       </div>
     </>
