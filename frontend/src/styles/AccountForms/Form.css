@@ -1,2 +1,60 @@
-.accountForms {
+.formContainer {
+  border: 0px solid blue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  border: 0px solid red;
+  width: 280px;
+  min-height: 550px;
+  border-radius: 19px;
+  box-shadow: 0 0 10px rgba(15, 15, 15, 0.28);
+  overflow: hidden;
+  position: relative;
+}
+
+.topContainer {
+  border: 0px solid blue;
+  width: 100%;
+  height: 200px;
+  padding-bottom: 2em;
+}
+
+.backDrop {
+  border: 0dvb solid green;
+  width: 160%;
+  height: 550px;
+  border-radius: 50%;
+  background: rgb(0, 129, 255);
+  background: linear-gradient(
+    58deg,
+    rgba(0, 129, 255, 1) 20%,
+    rgba(35, 9, 121, 1) 100%
+  );
+  position: absolute;
+  transform: rotate(60deg);
+  top: -290px;
+  left: -70px;
+  z-index: -1;
+}
+
+.formHeader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headerText {
+  font-size: 30px;
+  font-weight: 600;
+  color: aliceblue;
+  margin: 0;
+  line-height: 1.24;
+  padding-left: 1em;
 }

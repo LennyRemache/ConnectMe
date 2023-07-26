@@ -4,9 +4,9 @@ import Form from "./components/AccountForms/Form";
 
 function App() {
   return (
-    <>
-      <Form></Form>
-    </>
+    <div className="App">
+      <Form />
+    </div>
   );
 }
 
