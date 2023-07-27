@@ -8,7 +8,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = (e) => {
     e.preventDefault();
     const user = {
       firstName,
@@ -18,7 +18,7 @@ function SignUp() {
       password,
     };
 
-    await axios
+    axios
       .post("http://localhost:3001/auth/register", user)
       .then((response) => {
         console.log("lol", response);
