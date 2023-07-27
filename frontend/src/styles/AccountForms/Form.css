@@ -37,7 +37,7 @@
   );
   position: absolute;
   transform: rotate(60deg);
-  top: -290px;
+  top: -300px;
   left: -70px;
   z-index: -1;
 }
@@ -57,4 +57,12 @@
   margin: 0;
   line-height: 1.24;
   padding-left: 1em;
+}
+
+.linkToForm {
+  color: aliceblue;
+  display: flex;
+  font-size: small;
+  border: 0px solid red;
+  padding: 1em 2em;
 }

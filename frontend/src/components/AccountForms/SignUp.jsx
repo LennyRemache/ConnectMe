@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../../styles/AccountForms/SignUp.css";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -8,7 +9,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     const user = {
       firstName,
@@ -18,19 +19,19 @@ function SignUp() {
       password,
     };
 
-    axios
+    await axios
       .post("http://localhost:3001/auth/register", user)
       .then((response) => {
-        console.log("lol", response);
+        console.log("Success!", response.data);
       })
       .catch((error) => {
-        console.log("jhklhkl", error);
+        console.log(error.response.data.err);
       });
   };
 
   return (
     <>
-      <form method="POST" onSubmit={handleSignUp}>
+      <form method="POST" onSubmit={handleSignUp} className="signUpForm">
         <input
           type="text"
           value={firstName}
@@ -40,6 +41,7 @@ function SignUp() {
           placeholder="First Name"
           id="firstName"
         />
+
         <input
           type="text"
           value={lastName}
@@ -49,6 +51,7 @@ function SignUp() {
           placeholder="Last Name"
           id="lastName"
         />
+
         <input
           type="text"
           value={userName}
@@ -58,6 +61,7 @@ function SignUp() {
           placeholder="Username"
           id="userName"
         />
+
         <input
           type="email"
           value={email}
@@ -67,6 +71,7 @@ function SignUp() {
           placeholder="Email"
           id="email"
         />
+
         <input
           type="password"
           value={password}
@@ -77,7 +82,7 @@ function SignUp() {
           id="password"
         />
 
-        <input type="submit" value="Sign Up" />
+        <input type="submit" value="REGISTER" />
       </form>
     </>
   );

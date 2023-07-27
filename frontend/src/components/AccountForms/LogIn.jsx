@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import "../../styles/AccountForms/LogIn.css";
 
 function LogIn() {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ function LogIn() {
     await axios
       .post("http://localhost:3001/auth/login", user)
       .then((response) => {
-        console.log("Logged In", response);
+        console.log("Logged In", response.data.user);
       })
       .catch((error) => {
         console.log("Log In Failed", error);
@@ -24,7 +25,7 @@ function LogIn() {
   };
   return (
     <>
-      <form method="POST" onSubmit={handleLogIn}>
+      <form method="POST" onSubmit={handleLogIn} className="logInForm">
         <input
           type="email"
           value={email}
@@ -44,7 +45,7 @@ function LogIn() {
           id="password"
         />
 
-        <input type="submit" value="Log In" />
+        <input type="submit" value="LOG IN" />
       </form>
     </>
   );

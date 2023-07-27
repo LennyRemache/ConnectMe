@@ -1,0 +1,17 @@
+.logInForm {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5em;
+}
+
+.logInForm input:not(:last-child) {
+  margin-bottom: 1.5em;
+  padding: 0.5em 0.5em;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.logInForm input:last-child {
+  padding: 0.5em 2em;
+  margin: 1.5em 3em;
+}

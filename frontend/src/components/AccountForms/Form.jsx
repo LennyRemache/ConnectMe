@@ -14,8 +14,24 @@ function Form() {
           <div className="topContainer">
             <div className="backDrop"></div>
             <div className="formHeader">
-              <h2 className="headerText">Create</h2>
-              <h2 className="headerText">Account</h2>
+              <h2 className="headerText">
+                {registered ? "Welcome" : "Create"}
+              </h2>
+              <h2 className="headerText">{registered ? "Back" : "Account"}</h2>
+              <div className="linkToForm">
+                <div>
+                  {registered
+                    ? "Don't have an account?"
+                    : "Already have an account?"}
+                  &nbsp;
+                </div>
+                <Link
+                  to={registered ? "/register" : "/login"}
+                  onClick={() => setRegistered(!registered)}
+                >
+                  {registered ? "Sign Up" : "Log In"}
+                </Link>
+              </div>
             </div>
           </div>
           <div className="infoContainer">
@@ -24,12 +40,6 @@ function Form() {
               <Route path="/login" element={<LogIn />} />
               <Route path="/register" element={<SignUp />} />
             </Routes>
-            <Link
-              to={registered ? "/register" : "/login"}
-              onClick={() => setRegistered(!registered)}
-            >
-              {registered ? "Sign Up" : "Log In"}
-            </Link>
           </div>
         </div>
       </div>
