@@ -10,7 +10,7 @@ function Form() {
   return (
     <>
       <div className="formContainer">
-        <form method={registered ? "get" : "post"} className="form">
+        <div className="form">
           <div className="topContainer">
             <div className="backDrop"></div>
             <div className="formHeader">
@@ -20,18 +20,18 @@ function Form() {
           </div>
           <div className="infoContainer">
             <Routes>
-              <Route path="/signup" element={<SignUp />} />
+              <Route path="/" element={<LogIn />} />
               <Route path="/login" element={<LogIn />} />
+              <Route path="/register" element={<SignUp />} />
             </Routes>
             <Link
-              to={registered ? "/signup" : "/login"}
+              to={registered ? "/register" : "/login"}
               onClick={() => setRegistered(!registered)}
             >
               {registered ? "Sign Up" : "Log In"}
             </Link>
           </div>
-          <input type="submit" value={registered ? "Log In" : "Sign Up"} />
-        </form>
+        </div>
       </div>
     </>
   );

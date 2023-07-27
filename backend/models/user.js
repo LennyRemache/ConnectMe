@@ -26,12 +26,7 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      validate: {
-        validator: function (email) {
-          return process.env.EMAIL_REGEX.test(email);
-        },
-        message: (props) => `${props.value} is not a valid email!`,
-      },
+
       unique: true,
     },
     password: {
@@ -45,6 +40,7 @@ const userSchema = new mongoose.Schema(
     },
     description: {
       type: String,
+      default: "",
     },
     links: {
       type: Array,

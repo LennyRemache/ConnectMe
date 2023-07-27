@@ -6,6 +6,6 @@ const router = express.Router();
 // (route, middleware, controller)
 router.post("/register", register); // Routes HTTP POST requests to the specified path with the specified callback functions
 
-router.post("/login", login);
+router.get("/login", login);
 
 export default router;
