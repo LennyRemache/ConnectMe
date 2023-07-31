@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import "../../styles/AccountForms/Form.css";
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
-import {
-  AnimatePresence,
-  delay,
-  easeInOut,
-  easeOut,
-  motion,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Form() {
   const [registered, setRegistered] = useState(true);
@@ -71,7 +65,7 @@ function Form() {
                 </div>
                 <Link
                   exact
-                  to={registered ? "/register/" : "/login/"}
+                  to={registered ? "register" : "login"}
                   onClick={() => {
                     setIsExpanded(true);
                     setTimeout(() => {
@@ -88,11 +82,13 @@ function Form() {
           <div className="infoContainer">
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path="/login" element={<LogIn />} />
-                <Route path="/register" element={<SignUp />} />
+                <Route index element={<LogIn />} />
+                <Route path="login" element={<LogIn />} />
+                <Route path="register" element={<SignUp />} />
               </Routes>
             </AnimatePresence>
           </div>
+          <Outlet />
         </div>
       </div>
     </>
