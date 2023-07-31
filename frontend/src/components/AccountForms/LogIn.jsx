@@ -31,11 +31,8 @@ function LogIn() {
         method="POST"
         onSubmit={handleLogIn}
         className="logInForm"
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: { delay: 0.65 },
-        }}
+        initial={false}
+        animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         <input
