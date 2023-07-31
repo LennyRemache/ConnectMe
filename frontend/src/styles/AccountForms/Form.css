@@ -39,6 +39,8 @@
   transform: rotate(60deg);
   top: -300px;
   left: -70px;
+  border: 0px solid red;
+  z-index: 0;
 }
 
 .formHeader {
@@ -47,6 +49,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 0;
 }
 
 .headerText {
@@ -56,7 +59,7 @@
   margin: 0;
   line-height: 1.24;
   padding-left: 1em;
-  z-index: 1;
+  z-index: 2;
 }
 
 .linkToForm {
@@ -65,11 +68,11 @@
   font-size: small;
   border: 0px solid red;
   padding: 1em 2em;
-  z-index: 1;
+  z-index: 2;
 }
 
 .infoContainer {
+  border: 0px solid red;
   position: relative;
-  display: flex;
-  border: 1px solid red;
+  z-index: -1;
 }

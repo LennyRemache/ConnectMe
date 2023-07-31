@@ -70,12 +70,13 @@ function Form() {
                   &nbsp;
                 </div>
                 <Link
-                  to={registered ? "/register" : "/login"}
+                  exact
+                  to={registered ? "/register/" : "/login/"}
                   onClick={() => {
-                    setRegistered(!registered);
                     setIsExpanded(true);
                     setTimeout(() => {
                       setIsExpanded(false);
+                      setRegistered(!registered);
                     }, 600);
                   }}
                 >
@@ -85,7 +86,7 @@ function Form() {
             </motion.div>
           </div>
           <div className="infoContainer">
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/register" element={<SignUp />} />

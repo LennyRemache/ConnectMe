@@ -37,7 +37,7 @@ function SignUp() {
         onSubmit={handleSignUp}
         className="signUpForm"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 0.95 } }}
+        animate={{ opacity: 1, transition: { delay: 0.65 } }}
         exit={{ opacity: 0 }}
       >
         <input
