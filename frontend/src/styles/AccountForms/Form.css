@@ -67,3 +67,9 @@
   padding: 1em 2em;
   z-index: 1;
 }
+
+.infoContainer {
+  position: relative;
+  display: flex;
+  border: 1px solid red;
+}

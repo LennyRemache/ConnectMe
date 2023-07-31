@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import "../../styles/AccountForms/Form.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
-import { delay, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  delay,
+  easeInOut,
+  easeOut,
+  motion,
+} from "framer-motion";
 
 function Form() {
   const [registered, setRegistered] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const location = useLocation();
 
   const backDropVariants = {
     expanded: {
@@ -30,17 +38,6 @@ function Form() {
     },
     collapsed: {
       opacity: 1,
-    },
-  };
-
-  const formVariants = {
-    expanded: {
-      opacity: 0,
-      transition: { delay: -1 },
-    },
-    collapsed: {
-      opacity: 1,
-      transition: { delay: -1 },
     },
   };
 
@@ -75,9 +72,11 @@ function Form() {
                 <Link
                   to={registered ? "/register" : "/login"}
                   onClick={() => {
+                    setRegistered(!registered);
                     setIsExpanded(true);
-                    setTimeout(() => setIsExpanded(false), 600);
-                    setTimeout(() => setRegistered(!registered), 600);
+                    setTimeout(() => {
+                      setIsExpanded(false);
+                    }, 600);
                   }}
                 >
                   {registered ? "Sign Up" : "Log In"}
@@ -85,18 +84,14 @@ function Form() {
               </div>
             </motion.div>
           </div>
-          <motion.div
-            className="infoContainer"
-            initial={true}
-            animate={isExpanded ? "expanded" : "collapsed"}
-            variants={formVariants}
-          >
-            <Routes>
-              <Route path="/" element={<LogIn />} />
-              <Route path="/login" element={<LogIn />} />
-              <Route path="/register" element={<SignUp />} />
-            </Routes>
-          </motion.div>
+          <div className="infoContainer">
+            <AnimatePresence>
+              <Routes location={location} key={location.pathname}>
+                <Route path="/login" element={<LogIn />} />
+                <Route path="/register" element={<SignUp />} />
+              </Routes>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </>

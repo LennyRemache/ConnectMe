@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../../styles/AccountForms/SignUp.css";
+import { motion } from "framer-motion";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -31,7 +32,14 @@ function SignUp() {
 
   return (
     <>
-      <form method="POST" onSubmit={handleSignUp} className="signUpForm">
+      <motion.form
+        method="POST"
+        onSubmit={handleSignUp}
+        className="signUpForm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.95 } }}
+        exit={{ opacity: 0 }}
+      >
         <input
           type="text"
           value={firstName}
@@ -83,7 +91,7 @@ function SignUp() {
         />
 
         <input type="submit" value="REGISTER" />
-      </form>
+      </motion.form>
     </>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import "../../styles/AccountForms/LogIn.css";
+import { motion } from "framer-motion";
 
 function LogIn() {
   const [email, setEmail] = useState("");
@@ -23,9 +24,20 @@ function LogIn() {
         console.log("Log In Failed", error);
       });
   };
+
   return (
     <>
-      <form method="POST" onSubmit={handleLogIn} className="logInForm">
+      <motion.form
+        method="POST"
+        onSubmit={handleLogIn}
+        className="logInForm"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { delay: 0.95 },
+        }}
+        exit={{ opacity: 0 }}
+      >
         <input
           type="email"
           value={email}
@@ -46,7 +58,7 @@ function LogIn() {
         />
 
         <input type="submit" value="LOG IN" />
-      </form>
+      </motion.form>
     </>
   );
 }
