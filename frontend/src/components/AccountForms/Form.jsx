@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/AccountForms/Form.css";
-import { Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import { motion, AnimatePresence } from "framer-motion";
@@ -88,7 +88,6 @@ function Form() {
               </Routes>
             </AnimatePresence>
           </div>
-          <Outlet />
         </div>
       </div>
     </>
