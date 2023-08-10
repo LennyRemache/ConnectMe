@@ -7,14 +7,13 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home.jsx";
 
 function App() {
-  const location = useLocation();
   return (
     <div className="App">
       <NavBar />
       <div className="pageContainer">
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="templates" element={<div />} />
             <Route path="pricing" element={<div />} />
             <Route path="form/*" element={<Form />} />

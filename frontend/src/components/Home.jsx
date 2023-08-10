@@ -5,11 +5,11 @@ function Home() {
   return (
     <>
       <motion.div
-        initial={false}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        Home
+        HOME
       </motion.div>
     </>
   );
