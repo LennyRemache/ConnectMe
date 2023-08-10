@@ -1,21 +1,27 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 import "./App.css";
 //import { motion } from "framer-motion";
 import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import Home from "./components/Home.jsx";
 
 function App() {
+  const location = useLocation();
   return (
     <div className="App">
       <NavBar />
-      <motion.div className="pageContainer">
-        <AnimatePresence>
+      <div className="pageContainer">
+        <AnimatePresence mode="wait">
           <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="templates" element={<div />} />
+            <Route path="pricing" element={<div />} />
             <Route path="form/*" element={<Form />} />
+            <Route path="help" element={<div />} />
           </Routes>
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }

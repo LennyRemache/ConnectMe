@@ -37,7 +37,12 @@ function Form() {
 
   return (
     <>
-      <div className="formContainer">
+      <motion.div
+        className="formContainer"
+        initial={false}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <div className="form">
           <div className="topContainer">
             <motion.div
@@ -89,7 +94,7 @@ function Form() {
             </AnimatePresence>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -3,3 +3,7 @@
   height: 100vh;
   border: 0px solid blue;
 }
+
+.pageContainer {
+  border: 1px solid red;
+}
