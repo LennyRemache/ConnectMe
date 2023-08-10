@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 //import { motion } from "framer-motion";
 import NavBar from "./components/NavBar";
