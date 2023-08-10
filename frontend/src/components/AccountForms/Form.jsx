@@ -64,7 +64,7 @@ function Form() {
                   &nbsp;
                 </div>
                 <Link
-                  exact
+                  exact="true"
                   to={registered ? "register" : "login"}
                   onClick={() => {
                     setIsExpanded(true);
