@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { Connect } from "./db/mongoose.js";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
 
 /* CONFIGURATIONS */
 const app = express(); // initializing express server side application
@@ -16,6 +17,9 @@ app.use(cors()); // makes it possible to make api calls from the client side
 
 /* ROUTES */
 app.use("/auth", authRoutes);
+
+// GET DATA
+app.use("/", userRoutes);
 
 app.listen(3001, (req, res) => {
   console.log("Server Running at Port 3001");
