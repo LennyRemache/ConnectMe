@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavBar />
       <div className="pageContainer">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <Routes>
             <Route index element={<Home />} />
             <Route path="templates" element={<div />} />

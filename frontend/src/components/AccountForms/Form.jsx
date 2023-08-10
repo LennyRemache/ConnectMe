@@ -9,7 +9,7 @@ function Form() {
   const [registered, setRegistered] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const location = useLocation();
+  const loc = useLocation();
 
   const backDropVariants = {
     expanded: {
@@ -86,7 +86,7 @@ function Form() {
           </div>
           <div className="infoContainer">
             <AnimatePresence mode="wait">
-              <Routes location={location} key={location.pathname}>
+              <Routes location={loc} key={loc.pathname}>
                 <Route index element={<LogIn />} />
                 <Route path="login" element={<LogIn />} />
                 <Route path="register" element={<SignUp />} />
