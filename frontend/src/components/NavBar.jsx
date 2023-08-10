@@ -9,18 +9,17 @@ function NavBar() {
     <>
       <nav className="mainNav">
         <div className="leftNav">
-          <NavLink>ConnectMe</NavLink>
-          <NavLink>Templates</NavLink>
-          <NavLink>Pricing</NavLink>
+          <NavLink className="navLink">ConnectMe</NavLink>
+          <NavLink className="navLink">Templates</NavLink>
+          <NavLink className="navLink">Pricing</NavLink>
         </div>
         <div className="rightNav">
-          <NavLink to="form">Sign In</NavLink>
-          <NavLink>More</NavLink>
+          <NavLink to="form" className="navLink">
+            Sign In
+          </NavLink>
+          <NavLink className="navLink">Help</NavLink>
         </div>
       </nav>
-      <Routes>
-        <Route path="form/*" element={<Form />} />
-      </Routes>
     </>
   );
 }

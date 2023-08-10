@@ -1,4 +1,27 @@
 .mainNav {
   display: flex;
   justify-content: space-between;
+  border: 0px solid red;
+  padding: 1rem;
+  flex-wrap: wrap;
+  background: rgb(0, 129, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 129, 255, 1) 0%,
+    rgba(35, 9, 121, 1) 100%
+  );
+  color: aliceblue;
+  font-weight: 600;
+}
+
+.leftNav {
+  border: 0px solid blue;
+}
+
+.rightNav {
+  border: 0px solid green;
+}
+
+.navLink {
+  padding: 1.25rem;
 }
