@@ -26,7 +26,7 @@ function LogIn() {
       .then((response) => {
         console.log("Logged In", response.data.user);
         setLoggedIn(!loggedIn);
-        navigate("/account");
+        navigate("/profile");
       })
       .catch((error) => {
         console.log("Log In Failed", error);

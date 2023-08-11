@@ -28,7 +28,7 @@ function NavBar() {
               My Account
             </NavLink>
           ) : (
-            <NavLink to="form" className="navLink">
+            <NavLink to="form/login" className="navLink">
               Sign In
             </NavLink>
           )}

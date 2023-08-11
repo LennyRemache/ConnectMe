@@ -20,7 +20,6 @@ function App() {
             <Route path="templates" element={<div />} />
             <Route path="pricing" element={<div />} />
             <Route path="form/*" element={<Form />} />
-            <Route path="account" element={<div />} />
             <Route path="help" element={<div />} />
           </Routes>
         </AnimatePresence>
