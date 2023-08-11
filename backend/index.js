@@ -4,6 +4,8 @@ import cors from "cors";
 import { Connect } from "./db/mongoose.js";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 /* CONFIGURATIONS */
 const app = express(); // initializing express server side application
@@ -21,6 +23,6 @@ app.use("/auth", authRoutes);
 // GET DATA
 app.use("/", userRoutes);
 
-app.listen(3001, (req, res) => {
-  console.log("Server Running at Port 3001");
+app.listen(process.env.PORT, (req, res) => {
+  console.log("Server Running");
 });
