@@ -4,7 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
 import { AnimatePresence } from "framer-motion";
-import Home from "./components/Home.jsx";
+import Home from "./components/pages/Home.jsx";
 import { atomWithStorage } from "jotai/utils";
 
 export const statusAtom = atomWithStorage("status", false);

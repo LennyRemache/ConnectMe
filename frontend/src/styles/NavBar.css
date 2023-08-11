@@ -13,15 +13,3 @@
   color: aliceblue;
   font-weight: 600;
 }
-
-.leftNav {
-  border: 0px solid blue;
-}
-
-.rightNav {
-  border: 0px solid green;
-}
-
-.navLink {
-  padding: 1.25rem;
-}

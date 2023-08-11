@@ -1,40 +1,25 @@
-import React from "react";
-
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Button } from "./Button";
+import Dropdown from "./Dropdown";
 import "../styles/NavBar.css";
+import { NavLink } from "react-router-dom";
 import { useAtom } from "jotai";
 import { statusAtom } from "../App";
 
 function NavBar() {
   const [loggedIn] = useAtom(statusAtom);
+  const [click, setClicked] = useState(false);
+
+  const handleClick = () => setClicked(!click);
 
   return (
     <>
       <nav className="mainNav">
-        <div className="leftNav">
-          <NavLink to="/" className="navLink">
-            ConnectMe
-          </NavLink>
-          <NavLink to="templates" className="navLink">
-            Templates
-          </NavLink>
-          <NavLink to="pricing" className="navLink">
-            Pricing
-          </NavLink>
-        </div>
-        <div className="rightNav">
-          {loggedIn ? (
-            <NavLink to="account" className="navLink">
-              My Account
-            </NavLink>
-          ) : (
-            <NavLink to="form/login" className="navLink">
-              Sign In
-            </NavLink>
-          )}
-          <NavLink to="help" className="navLink">
-            Help
-          </NavLink>
+        <NavLink to="/" className="navbarLogo">
+          ConnectMe
+        </NavLink>
+        <div className="menuIcon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
       </nav>
     </>
