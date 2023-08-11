@@ -21,7 +21,7 @@ function SignUp() {
     };
 
     await axios
-      .post("http://localhost:3001/auth/register", user)
+      .post("https://connectme-server.onrender.com/auth/register", user)
       .then((response) => {
         console.log("Success!", response.data);
       })
