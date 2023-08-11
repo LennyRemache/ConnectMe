@@ -25,7 +25,7 @@ function LogIn() {
       .post("https://connectme-server.onrender.com/auth/login", user)
       .then((response) => {
         console.log("Logged In", response.data.user);
-        setLoggedIn(true);
+        setLoggedIn(!loggedIn);
         navigate("/account");
       })
       .catch((error) => {
