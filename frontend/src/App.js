@@ -5,9 +5,9 @@ import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
 import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home.jsx";
-import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 
-export const accountStatus = atom(false);
+export const statusAtom = atomWithStorage("status", false);
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
             <Route path="templates" element={<div />} />
             <Route path="pricing" element={<div />} />
             <Route path="form/*" element={<Form />} />
+            <Route path="account" element={<div />} />
             <Route path="help" element={<div />} />
           </Routes>
         </AnimatePresence>

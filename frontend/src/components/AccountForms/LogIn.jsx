@@ -4,14 +4,14 @@ import axios from "axios";
 import "../../styles/AccountForms/LogIn.css";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
-import { accountStatus } from "../../App";
+import { statusAtom } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [loggedIn, setLoggedIn] = useAtom(accountStatus);
+  const [loggedIn, setLoggedIn] = useAtom(statusAtom);
   const navigate = useNavigate();
 
   const handleLogIn = async (e) => {

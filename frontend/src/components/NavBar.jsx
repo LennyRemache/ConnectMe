@@ -3,10 +3,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/NavBar.css";
 import { useAtom } from "jotai";
-import { accountStatus } from "../App";
+import { statusAtom } from "../App";
 
 function NavBar() {
-  const [loggedIn] = useAtom(accountStatus);
+  const [loggedIn] = useAtom(statusAtom);
 
   return (
     <>
