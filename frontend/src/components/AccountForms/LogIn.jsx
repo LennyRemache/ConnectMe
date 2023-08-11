@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../styles/AccountForms/LogIn.css";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
-import { accountStatus } from "../App";
+import { accountStatus } from "../../App";
 
 function LogIn() {
   const [email, setEmail] = useState("");
