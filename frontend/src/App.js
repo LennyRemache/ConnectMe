@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
 import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home.jsx";
-import atom from "jotai";
+import { atom } from "jotai";
 
 export const accountStatus = atom(false);
 
