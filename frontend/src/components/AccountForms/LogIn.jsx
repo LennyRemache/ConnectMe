@@ -3,10 +3,14 @@ import { useState } from "react";
 import axios from "axios";
 import "../../styles/AccountForms/LogIn.css";
 import { motion } from "framer-motion";
+import { useAtom } from "jotai";
+import { accountStatus } from "../App";
 
 function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [loggedIn, setLoggedIn] = useAtom(accountStatus);
 
   const handleLogIn = async (e) => {
     e.preventDefault();
@@ -19,6 +23,7 @@ function LogIn() {
       .post("https://connectme-server.onrender.com/auth/login", user)
       .then((response) => {
         console.log("Logged In", response.data.user);
+        setLoggedIn(!loggedIn);
       })
       .catch((error) => {
         console.log("Log In Failed", error);
