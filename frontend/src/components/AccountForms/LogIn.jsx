@@ -5,14 +5,14 @@ import "../../styles/AccountForms/LogIn.css";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { accountStatus } from "../../App";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [loggedIn, setLoggedIn] = useAtom(accountStatus);
-  const navigate = useNavigation();
+  const navigate = useNavigate();
 
   const handleLogIn = async (e) => {
     e.preventDefault();
