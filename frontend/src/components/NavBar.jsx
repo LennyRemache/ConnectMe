@@ -40,13 +40,13 @@ function NavBar() {
             onMouseLeave={onMouseLeave}
           >
             <NavLink
-              to="profile"
+              to={loggedIn ? "profile" : "form/login"}
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              My Account
+              {loggedIn ? "My Account" : "Sign In"}
             </NavLink>
-            {dropdown && <Dropdown />}
+            {dropdown && loggedIn && <Dropdown />}
           </li>
 
           <li className="nav-item">
