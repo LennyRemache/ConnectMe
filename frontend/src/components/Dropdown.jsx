@@ -7,7 +7,7 @@ import { statusAtom } from "../App";
 
 function Dropdown() {
   const [click, setClicked] = useState(false);
-  const [setLoggedIn] = useAtom(statusAtom);
+  const [loggedIn, setLoggedIn] = useAtom(statusAtom);
 
   const handleClick = () => setClicked(!click);
   return (
@@ -35,7 +35,7 @@ function Dropdown() {
             className="dropdown-link"
             onClick={() => {
               setClicked(false);
-              setLoggedIn(false);
+              setLoggedIn(!loggedIn);
             }}
           >
             Log Out
