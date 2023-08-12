@@ -30,7 +30,6 @@ function Dropdown() {
           );
         })}
         <li>
-          {" "}
           <NavLink
             to="/"
             className="dropdown-link"
