@@ -7,7 +7,7 @@ import { statusAtom } from "../App";
 
 function Dropdown() {
   const [click, setClicked] = useState(false);
-  const [loggedIn, setLoggedIn] = useAtom(statusAtom);
+  const [setLoggedIn] = useAtom(statusAtom);
 
   const handleClick = () => setClicked(!click);
   return (
