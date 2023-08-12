@@ -48,7 +48,11 @@ function NavBar() {
                 My Account
               </NavLink>
             ) : (
-              <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+              <NavLink
+                to="form/login"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
                 Sign In
               </NavLink>
             )}
