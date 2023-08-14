@@ -19,6 +19,7 @@ function Home() {
           <img
             src={require("../../assets/networking.png")}
             className="hero-img"
+            alt="Loading..."
           />
         </div>
       </div>
