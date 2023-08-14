@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useAtom } from "jotai";
@@ -28,10 +28,17 @@ function NavBar() {
             Help
           </NavLink>
         </div>
-        <NavLink to="form" className="navbar-account">
-          <i class="fa-solid fa-right-to-bracket"></i>
-          Sign In
-        </NavLink>
+        {loggedIn ? (
+          <NavLink to="account" className="navbar-account">
+            <i class="fa-regular fa-user"></i>
+            Account
+          </NavLink>
+        ) : (
+          <NavLink to="form" className="navbar-account">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Sign In
+          </NavLink>
+        )}
       </nav>
     </>
   );
