@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Dropdown from "./Dropdown";
 import "../styles/NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useAtom } from "jotai";
@@ -7,83 +6,32 @@ import { statusAtom } from "../App";
 
 function NavBar() {
   const [loggedIn] = useAtom(statusAtom);
-  const [click, setClicked] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-
-  const handleClick = () => setClicked(!click);
-  const closeMobileMenu = () => setClicked(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-  const onMouseLeave = () => {
-    setDropdown(false);
-  };
 
   return (
     <>
-      <nav className="mainNav">
+      <nav className="navbar">
         <NavLink to="/" className="navbar-logo">
+          <i class="fa-brands fa-connectdevelop fa-2xl"></i>
           ConnectMe
         </NavLink>
-        <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+        <div className="navbar-links">
+          <NavLink to="/" className="navbar-link">
+            <i class="fa-regular fa-map"></i>
+            Templates
+          </NavLink>
+          <NavLink to="/" className="navbar-link">
+            <i class="fa-regular fa-credit-card"></i>
+            Pricing
+          </NavLink>
+          <NavLink to="/" className="navbar-link">
+            <i class="fa-regular fa-circle-question"></i>
+            Help
+          </NavLink>
         </div>
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            {loggedIn ? (
-              <NavLink
-                to="profile"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                My Account
-              </NavLink>
-            ) : (
-              <NavLink
-                to="form/login"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Sign In
-              </NavLink>
-            )}
-
-            {dropdown && loggedIn && <Dropdown />}
-          </li>
-
-          <li className="nav-item">
-            <NavLink
-              to="templates"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Templates
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="pricing"
-              className="nav-links"
-              onClick={closeMobileMenu}
-            >
-              Pricing
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="help" className="nav-links" onClick={closeMobileMenu}>
-              Help
-            </NavLink>
-          </li>
-        </ul>
+        <NavLink to="form" className="navbar-account">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Sign In
+        </NavLink>
       </nav>
     </>
   );

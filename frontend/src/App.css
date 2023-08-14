@@ -1,9 +1,8 @@
 .App {
-  width: 100vw;
-  height: 100vh;
   border: 0px solid blue;
+  width: 100%;
 }
 
 .pageContainer {
-  border: 1px solid red;
+  border: 0px solid red;
 }
