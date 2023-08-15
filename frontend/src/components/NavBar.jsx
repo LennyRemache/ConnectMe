@@ -3,6 +3,7 @@ import "../styles/NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useAtom } from "jotai";
 import { statusAtom } from "../App";
+import { navItems } from "./NavItems";
 
 function NavBar() {
   const [loggedIn] = useAtom(statusAtom);
@@ -15,18 +16,14 @@ function NavBar() {
           ConnectMe
         </NavLink>
         <div className="navbar-links">
-          <NavLink to="/" className="navbar-link">
-            <i class="fa-regular fa-map"></i>
-            Templates
-          </NavLink>
-          <NavLink to="/" className="navbar-link">
-            <i class="fa-regular fa-credit-card"></i>
-            Pricing
-          </NavLink>
-          <NavLink to="/" className="navbar-link">
-            <i class="fa-regular fa-circle-question"></i>
-            Help
-          </NavLink>
+          {navItems.map((item, index) => {
+            return (
+              <NavLink to={item.path} className={item.cName}>
+                <i className={item.icon} />
+                {item.title}
+              </NavLink>
+            );
+          })}
         </div>
         {loggedIn ? (
           <NavLink to="account" className="navbar-account">

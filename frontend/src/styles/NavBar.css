@@ -11,6 +11,10 @@
   padding: 0 1rem;
 }
 
+.menu-icon {
+  display: none;
+}
+
 .navbar-logo {
   font-weight: bold;
   font-size: larger;
