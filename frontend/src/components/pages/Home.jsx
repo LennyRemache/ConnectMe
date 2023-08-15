@@ -14,7 +14,7 @@ function Home() {
             Smarter networking solutions and services from ConnectMe
           </h1>
           <button className="hero-register-btn">
-            <i class="fa-brands fa-connectdevelop fa-lg"></i>Sign Up
+            <i className="fa-brands fa-connectdevelop fa-lg"></i>Sign Up
           </button>
           <img
             src={require("../../assets/networking.png")}

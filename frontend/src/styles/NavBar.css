@@ -11,7 +11,8 @@
   padding: 0 1rem;
 }
 
-.menu-icon {
+.menu-open-icon,
+.menu-close-icon {
   display: none;
 }
 
@@ -56,4 +57,64 @@
 
 .navbar-account:hover {
   color: #11bfa59f;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-logo {
+    border: 0px solid red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .menu-open-icon,
+  .menu-close-icon {
+    display: block;
+    cursor: pointer;
+    border: 0px solid red;
+    color: rgba(49, 62, 89, 0.6);
+  }
+
+  .menu-close-icon {
+    width: fit-content;
+    height: fit-content;
+    height: 53px;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-close-icon:hover,
+  .menu-open-icon:hover {
+    color: rgba(49, 62, 89, 1);
+  }
+
+  .navbar-links {
+    border: 0px solid red;
+    position: absolute;
+    top: 0;
+    left: -200vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(199, 211, 255);
+    z-index: 2;
+    width: 340px;
+    padding: 0 2rem;
+    transition: all 1s ease-in-out;
+    -webkit-box-shadow: 20px 0px 21px 8px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 20px 0px 21px 8px rgba(0, 0, 0, 0.24);
+    box-shadow: 20px 0px 21px 8px rgba(0, 0, 0, 0.24);
+  }
+
+  .navbar-links.active {
+    left: 0;
+    transition: all 0.5s ease;
+  }
+
+  .navbar-link {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.205);
+    padding: 1.5rem 0rem;
+  }
 }
