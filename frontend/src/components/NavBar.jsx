@@ -9,8 +9,6 @@ function NavBar() {
   const [loggedIn] = useAtom(statusAtom);
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const [width, setWidth] = useState(window.innerWidth);
-  window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   return (
     <>
