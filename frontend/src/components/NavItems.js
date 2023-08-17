@@ -1,8 +1,14 @@
 export const navItems = [
   {
     icon: "fa-regular fa-map",
-    title: "Templates",
-    path: "/templates",
+    title: "Marketplace",
+    path: "/Marketplace",
+    cName: "navbar-link",
+  },
+  {
+    icon: "fa-regular fa-credit-card",
+    title: "Discover",
+    path: "/Discover",
     cName: "navbar-link",
   },
   {
@@ -13,8 +19,8 @@ export const navItems = [
   },
   {
     icon: "fa-regular fa-circle-question",
-    title: "Help",
-    path: "/help",
+    title: "Learn",
+    path: "/learn",
     cName: "navbar-link",
   },
 ];
