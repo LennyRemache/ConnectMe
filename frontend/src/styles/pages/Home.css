@@ -2,7 +2,6 @@
 
 .homeContainer {
   border: 0px solid red;
-  height: 100vh;
   background-image: linear-gradient(
     to top,
     #dfe9f3f3 0%,

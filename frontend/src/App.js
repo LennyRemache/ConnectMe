@@ -1,24 +1,30 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 //import { motion } from "framer-motion";
 import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
 import Home from "./components/pages/Home.jsx";
 import { atomWithStorage } from "jotai/utils";
+import Profile from "./components/pages/Profile";
+import { useEffect } from "react";
 
 export const statusAtom = atomWithStorage("status", false);
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className="App">
-      <NavBar />
+      {location.pathname.slice(0, 8) !== "/profile" && <NavBar />}
       <div className="pageContainer">
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="templates" element={<div />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="marketplace" element={<div />} />
+          <Route path="discover" element={<div />} />
           <Route path="pricing" element={<div />} />
+          <Route path="learn" element={<div />} />
           <Route path="form/*" element={<Form />} />
-          <Route path="help" element={<div />} />
+          <Route path="profile/*" element={<Profile />} />
         </Routes>
       </div>
     </div>

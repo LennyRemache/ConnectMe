@@ -2,13 +2,13 @@ export const navItems = [
   {
     icon: "fa-regular fa-map",
     title: "Marketplace",
-    path: "/Marketplace",
+    path: "/marketplace",
     cName: "navbar-link",
   },
   {
     icon: "fa-regular fa-credit-card",
     title: "Discover",
-    path: "/Discover",
+    path: "/discover",
     cName: "navbar-link",
   },
   {
