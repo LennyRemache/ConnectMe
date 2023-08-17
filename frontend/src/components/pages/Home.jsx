@@ -1,10 +1,16 @@
 import React from "react";
 import "../../styles/pages/Home.css";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
     <>
-      <div className="homeContainer">
+      <motion.div
+        className="homeContainer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <div className="hero-container">
           <h2 className="hero-header">
             There's a better way to <span>connect with customers</span>
@@ -22,7 +28,7 @@ function Home() {
             alt="Loading..."
           />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -4,6 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(
+    0deg,
+    #8bc6ec 0%,
+    #9599e2 50%,
+    #ffffff 100%
+  );
 }
 
 .form {
@@ -15,6 +23,7 @@
   overflow: hidden;
   position: relative;
   z-index: 0;
+  background-color: rgba(240, 248, 255, 0.712);
 }
 
 .topContainer {

@@ -5,4 +5,5 @@
 
 .pageContainer {
   border: 0px solid red;
+  height: 100vh;
 }
