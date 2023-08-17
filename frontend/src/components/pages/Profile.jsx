@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/pages/Profile.css";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import ProfileNavbar from "../ProfileNavbar";
 
 function Profile() {

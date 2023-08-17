@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { useAtom } from "jotai";
 import { statusAtom } from "../App";
 import { navItems } from "./NavItems";
-import { profileItems } from "./ProfileItems";
 
 function NavBar() {
   const [loggedIn] = useAtom(statusAtom);

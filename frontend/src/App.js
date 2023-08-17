@@ -6,7 +6,6 @@ import Form from "./components/AccountForms/Form";
 import Home from "./components/pages/Home.jsx";
 import { atomWithStorage } from "jotai/utils";
 import Profile from "./components/pages/Profile";
-import { useEffect } from "react";
 
 export const statusAtom = atomWithStorage("status", false);
 
