@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import linkSchema from "./link";
-import appearanceSchema from "./appearance";
+import linkSchema from "./link.js";
+import appearanceSchema from "./appearance.js";
 
 const profileSchema = new mongoose.Schema(
   {
