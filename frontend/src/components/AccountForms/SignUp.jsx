@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../../styles/AccountForms/SignUp.css";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -9,6 +10,8 @@ function SignUp() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -24,6 +27,7 @@ function SignUp() {
       .post("https://connectme-server.onrender.com/auth/register", user)
       .then((response) => {
         console.log("Success!", response.data);
+        navigate("/profile");
       })
       .catch((error) => {
         console.log(error.response.data.err);
