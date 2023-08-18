@@ -43,4 +43,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true } // provides dates and time of when a new user is CRUD
 );
 
-export const User = mongoose.model("User", userSchema);
+export const User = mongoose.model("Users", userSchema);
