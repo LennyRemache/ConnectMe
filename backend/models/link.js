@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const linkSchema = mongoose.Schema(
+const linkSchema = new mongoose.Schema(
   {
     title: {
       type: String,
