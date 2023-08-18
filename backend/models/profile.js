@@ -1,18 +1,16 @@
 import mongoose from "mongoose";
+import linkSchema from "./link";
+import appearanceSchema from "./appearance";
 
 const profileSchema = new mongoose.Schema(
   {
-    picturePath: {
-      type: String,
-      default: "",
-    },
-    description: {
-      type: String,
-      default: "",
-    },
     links: {
-      type: Array,
+      type: [linkSchema],
       default: [],
+    },
+    appearance: {
+      type: appearanceSchema,
+      default: {},
     },
   },
   { timestamps: true }
