@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import profileSchema from "./profile.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -34,17 +35,9 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 5,
     },
-    picturePath: {
-      type: String,
-      default: "",
-    },
-    description: {
-      type: String,
-      default: "",
-    },
-    links: {
-      type: Array,
-      default: [],
+    profile: {
+      type: profileSchema,
+      default: {},
     },
   },
   { timestamps: true } // provides dates and time of when a new user is CRUD

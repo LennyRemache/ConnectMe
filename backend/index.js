@@ -24,5 +24,5 @@ app.use("/auth", authRoutes);
 app.use("/", userRoutes);
 
 app.listen(process.env.PORT, (req, res) => {
-  console.log("Server Running");
+  console.log(`Server Running at ${process.env.PORT}`);
 });
