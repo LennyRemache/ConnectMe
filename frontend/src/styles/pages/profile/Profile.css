@@ -1,0 +1,13 @@
+.profileContainer {
+  border: 0px solid blue;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  height: fit-content;
+  padding: 1.5rem;
+}
+
+@media screen and (max-width: 960px) {
+  .profileContainer {
+    padding: 0;
+  }
+}

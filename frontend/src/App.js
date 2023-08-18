@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
 import Home from "./components/pages/Home.jsx";
 import { atomWithStorage } from "jotai/utils";
-import Profile from "./components/pages/Profile";
+import Profile from "./components/pages/profile/Profile";
 
 export const statusAtom = atomWithStorage("status", false);
 

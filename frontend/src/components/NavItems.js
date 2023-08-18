@@ -1,8 +1,8 @@
 export const navItems = [
   {
     icon: "fa-regular fa-map",
-    title: "Marketplace",
-    path: "/marketplace",
+    title: "Templates",
+    path: "/templates",
     cName: "navbar-link",
   },
   {
