@@ -40,7 +40,7 @@ function NavBar() {
             );
           })}
         </div>
-        {loggedIn ? (
+        {!loggedIn ? (
           <NavLink to="profile" className="navbar-account">
             <i className="fa-regular fa-user"></i>
             Profile

@@ -1,0 +1,36 @@
+.dropdown-container {
+  position: absolute;
+  right: 0;
+  width: 340px;
+  padding: 0.5rem 1rem;
+  border: 1px solid red;
+}
+
+.dropdown-profile-info {
+  border: 0px solid blue;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-profile-pic {
+  border-radius: 100%;
+  border: 0px solid red;
+  height: 48px;
+  width: 48px;
+  background-color: black;
+  margin: 1rem;
+}
+
+.dropdown-profile-text {
+  border: 0px solid green;
+}
+
+.dropdown-account-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-support-items {
+  display: flex;
+  flex-direction: column;
+}

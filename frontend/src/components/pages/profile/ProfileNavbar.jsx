@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { profileItems } from "./ProfileItems";
 import "../../../styles/pages/profile/ProfileNavbar.css";
+import Dropdown from "./Dropdown";
 
 function ProfileNavbar() {
   return (
@@ -22,10 +23,10 @@ function ProfileNavbar() {
             );
           })}
         </div>
-        <NavLink to="/profile" className="profile-navbar-account">
-          <i className="fa-regular fa-user"></i>
-          Profile
-        </NavLink>
+        <div className="profile-navbar-account">
+          <i className="fa-regular fa-circle-user fa-2xl" />
+          <Dropdown />
+        </div>
       </nav>
     </>
   );
