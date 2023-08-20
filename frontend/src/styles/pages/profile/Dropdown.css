@@ -2,8 +2,11 @@
   position: absolute;
   right: 0;
   width: 340px;
+  height: fit-content;
   padding: 0.5rem 1rem;
   border: 1px solid red;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .dropdown-profile-info {
@@ -25,12 +28,49 @@
   border: 0px solid green;
 }
 
+h1 {
+  margin: 1rem 0;
+  font-size: large;
+}
+
+.dropdown-account {
+  border: 0px solid red;
+}
+
 .dropdown-account-items {
   display: flex;
   flex-direction: column;
 }
 
+.dropdown-account-item,
+.dropdown-support-item {
+  margin: 0.2rem 0;
+}
+
+.dropdown-account-item:hover,
+.dropdown-support-item:hover {
+  background-color: rgb(230, 229, 229);
+}
+
 .dropdown-support-items {
   display: flex;
   flex-direction: column;
+}
+
+.dropdown-signout {
+  border: 0px solid red;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.dropdown-account-item,
+.dropdown-support-item,
+.dropdown-signout {
+  border: 0px solid blue;
+  padding: 0.75rem 0.5rem;
+  border-radius: 20px;
+}
+
+.dropdown-account-item > i,
+.dropdown-support-item > i {
+  margin-right: 1rem;
 }

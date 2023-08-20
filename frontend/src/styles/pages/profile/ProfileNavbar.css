@@ -49,7 +49,7 @@
   margin-right: 6px;
 }
 
-.profile-navbar-account:hover {
+.profile-navbar-account > i:hover {
   color: #11bfa59f;
   cursor: pointer;
 }

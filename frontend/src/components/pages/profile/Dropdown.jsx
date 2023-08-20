@@ -39,10 +39,12 @@ function Dropdown() {
             </NavLink>
           </div>
         </div>
-        <NavLink to="/" className="dropdown-signout">
-          <i className="fa-solid fa-right-to-bracket"></i>
-          Sign Out
-        </NavLink>
+        <div className="dropdown-signout">
+          <NavLink to="/">
+            <i className="fa-solid fa-right-to-bracket"></i>
+            Sign Out
+          </NavLink>
+        </div>
       </div>
     </>
   );
