@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { profileItems } from "./ProfileItems";
 import "../../../styles/pages/profile/ProfileNavbar.css";
 import Dropdown from "./Dropdown";
 
 function ProfileNavbar() {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+
   return (
     <>
       <nav className="profile-navbar">
@@ -23,9 +26,9 @@ function ProfileNavbar() {
             );
           })}
         </div>
-        <div className="profile-navbar-account">
+        <div className="profile-navbar-account" onClick={handleClick}>
           <i className="fa-regular fa-circle-user fa-2xl" />
-          <Dropdown />
+          <Dropdown class={click ? "active" : ""} />
         </div>
       </nav>
     </>

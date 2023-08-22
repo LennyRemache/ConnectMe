@@ -40,13 +40,8 @@
 
 .profile-navbar-account {
   color: #11bfa5;
-  font-size: 15px;
   border: 1px solid red;
   position: relative;
-}
-
-.profile-navbar-account > i {
-  margin-right: 6px;
 }
 
 .profile-navbar-account > i:hover {
