@@ -18,7 +18,7 @@ function App() {
       <div className="pageContainer">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="marketplace" element={<div />} />
+          <Route path="templates" element={<div />} />
           <Route path="discover" element={<div />} />
           <Route path="pricing" element={<div />} />
           <Route path="learn" element={<div />} />

@@ -19,15 +19,23 @@ function ProfileNavbar() {
         <div className="profile-navbar-links">
           {profileItems.map((item, index) => {
             return (
-              <NavLink to={item.path} className={item.cName} key={index}>
+              <NavLink
+                to={item.path}
+                className={item.cName}
+                key={index}
+                onClick={() => setClick(false)}
+              >
                 <i className={item.icon} />
                 {item.title}
               </NavLink>
             );
           })}
         </div>
-        <div className="profile-navbar-account" onClick={handleClick}>
-          <i className="fa-regular fa-circle-user fa-2xl" />
+        <div className="profile-navbar-account">
+          <i
+            className="fa-regular fa-circle-user fa-2xl"
+            onClick={handleClick}
+          />
           <Dropdown class={click ? "active" : ""} />
         </div>
       </nav>
