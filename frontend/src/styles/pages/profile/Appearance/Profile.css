@@ -1,12 +1,19 @@
 .appearance-profile-container {
-  border: 1px solid red;
+  border: 0px solid red;
   max-width: 640px;
   width: 100%;
 }
 
 .appearance-profile {
-  border: 1px solid red;
+  border: 0px solid red;
+  background-color: white;
   border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.appearance-pic {
+  border: 1px solid red;
+  display: flex;
 }
 
 .appearance-pic-img {
@@ -15,4 +22,19 @@
   height: 96px;
   width: 96px;
   background-color: black;
+}
+
+.appearance-pic-btns {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.appearance-pic-btn {
+  height: 100%;
+  border-radius: 20px;
+  border: none;
+}
+
+.appearance-pic-btn.pick {
+  margin-bottom: 0.25rem;
 }
