@@ -9,24 +9,29 @@
   background-color: white;
   border-radius: 20px;
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .appearance-pic {
-  border: 1px solid red;
+  border: 0px solid red;
+  width: 100%;
   display: flex;
 }
 
 .appearance-pic-img {
   border-radius: 100%;
-  border: 1px solid green;
+  border: 0px solid green;
   height: 96px;
   width: 96px;
   background-color: black;
 }
 
 .appearance-pic-btns {
+  border: 0px solid red;
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin-left: 1rem;
 }
 .appearance-pic-btn {
@@ -36,5 +41,57 @@
 }
 
 .appearance-pic-btn.pick {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.appearance-title {
+  border: 0px solid red;
+  position: relative;
+}
+
+.appearance-title > label {
+  position: absolute;
+  top: 2rem;
+  left: 1.25rem;
+  font-size: small;
+  line-height: 2;
+}
+
+.appearance-title > input {
+  background-color: rgb(246 247 245);
+  border: none;
+  width: 100%;
+  padding: 1.75rem 1.5rem 0.75rem 1.25rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 14px;
+}
+
+.appearance-bio {
+  position: relative;
+}
+
+.appearance-bio-label {
+  position: absolute;
+  top: 0.5rem;
+  left: 1.25rem;
+  font-size: small;
+  line-height: 2;
+}
+
+.appearance-bio > textarea {
+  background-color: rgb(246 247 245);
+  border: none;
+  width: 100%;
+  padding: 2.25rem 1.5rem 0.75rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.appearance-bio-count {
+  font-size: small;
+  float: right;
 }
