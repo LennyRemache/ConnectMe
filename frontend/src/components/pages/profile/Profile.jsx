@@ -4,13 +4,19 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import ProfileNavbar from "./ProfileNavbar";
 import Links from "./Links";
 import Appearance from "./Appearance/Appearance";
+import { motion } from "framer-motion";
 
 function Profile() {
   const location = useLocation();
   console.log(location.pathname.slice(8, 19));
   return (
     <>
-      <div className="profileContainer">
+      <motion.div
+        className="profileContainer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <ProfileNavbar />
         <div className="profile-content">
           <div className="profile-route">
@@ -27,7 +33,7 @@ function Profile() {
             <div className="profile-display">Display</div>
           )}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

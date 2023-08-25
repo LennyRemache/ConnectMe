@@ -3,6 +3,7 @@ import "../../../../styles/pages/profile/Appearance/Profile.css";
 
 function Profile() {
   const [bio, setBio] = useState("");
+
   return (
     <>
       <div className="appearance-profile-container">
@@ -18,14 +19,11 @@ function Profile() {
             </div>
           </div>
           <div className="appearance-title">
-            <input type="text" name="" id="" />
+            <input type="text" />
             <label>Profile Title</label>
           </div>
           <div className="appearance-bio">
             <textarea
-              name=""
-              id=""
-              cols="30"
               rows="4"
               value={bio}
               onChange={(e) => setBio(e.target.value)}

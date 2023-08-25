@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../styles/AccountForms/LogIn.css";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
-import { statusAtom } from "../../App";
+import { statusAtom, userAtom } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 function LogIn() {
@@ -13,6 +13,8 @@ function LogIn() {
 
   const [loggedIn, setLoggedIn] = useAtom(statusAtom);
   const navigate = useNavigate();
+
+  const [userData, setUserData] = useAtom(userAtom);
 
   const handleLogIn = async (e) => {
     e.preventDefault();
@@ -24,7 +26,9 @@ function LogIn() {
     await axios
       .post("https://connectme-server.onrender.com/auth/login", user)
       .then((response) => {
-        console.log("Logged In", response.data.user);
+        console.log("Logged In");
+        setUserData(response.data.user);
+        console.log(userData);
         setLoggedIn(!loggedIn);
         navigate("/profile");
       })

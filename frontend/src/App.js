@@ -4,10 +4,12 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Form from "./components/AccountForms/Form";
 import Home from "./components/pages/Home.jsx";
-import { atomWithStorage } from "jotai/utils";
+import { createJSONStorage, atomWithStorage } from "jotai/utils";
 import Profile from "./components/pages/profile/Profile";
 
 export const statusAtom = atomWithStorage("status", false);
+const storage = createJSONStorage(() => sessionStorage);
+export const userAtom = atomWithStorage("user-data", "", storage);
 
 function App() {
   const location = useLocation();
