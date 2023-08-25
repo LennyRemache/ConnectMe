@@ -44,7 +44,12 @@ function Dropdown(props) {
           </div>
         </div>
         <div className="dropdown-signout">
-          <NavLink to="/" onClick={() => setLoggedIn(!loggedIn)}>
+          <NavLink
+            to="/"
+            onClick={() => {
+              if (loggedIn === "true") setLoggedIn(false);
+            }}
+          >
             <i className="fa-solid fa-right-to-bracket signout-icon"></i>
             Sign Out
           </NavLink>
