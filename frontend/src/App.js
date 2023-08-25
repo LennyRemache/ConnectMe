@@ -7,8 +7,8 @@ import Home from "./components/pages/Home.jsx";
 import { createJSONStorage, atomWithStorage } from "jotai/utils";
 import Profile from "./components/pages/profile/Profile";
 
-export const statusAtom = atomWithStorage("status", false);
 const storage = createJSONStorage(() => sessionStorage);
+export const statusAtom = atomWithStorage("logged-in", false, storage);
 export const userAtom = atomWithStorage("user-data", "", storage);
 
 function App() {

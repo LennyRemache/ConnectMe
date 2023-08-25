@@ -29,7 +29,7 @@ function LogIn() {
         console.log("Logged In");
         setUserData(response.data.user);
         console.log(userData);
-        setLoggedIn(!loggedIn);
+        if (loggedIn === "false") setLoggedIn(true);
         navigate("/profile");
       })
       .catch((error) => {
