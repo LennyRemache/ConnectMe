@@ -8,8 +8,8 @@ import { createJSONStorage, atomWithStorage } from "jotai/utils";
 import Profile from "./components/pages/profile/Profile";
 
 const storage = createJSONStorage(() => sessionStorage);
-export const statusAtom = atomWithStorage("logged-in", false);
-export const userAtom = atomWithStorage("user-data", "", storage);
+const statusAtom = atomWithStorage("logged-in", false, storage);
+const userAtom = atomWithStorage("user-data", null, storage);
 
 function App() {
   const location = useLocation();
@@ -32,4 +32,4 @@ function App() {
   );
 }
 
-export default App;
+export { App, statusAtom, userAtom };

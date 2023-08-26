@@ -28,9 +28,9 @@ function LogIn() {
       .then((response) => {
         console.log("Logged In");
         setUserData(response.data.user);
-        console.log(userData);
-        if (loggedIn === "false") setLoggedIn(true);
+        setLoggedIn(true);
         navigate("/profile");
+        console.log(loggedIn, userData);
       })
       .catch((error) => {
         console.log("Log In Failed", error);

@@ -6,7 +6,7 @@ import { statusAtom } from "../../../App";
 
 function Dropdown(props) {
   const [loggedIn, setLoggedIn] = useAtom(statusAtom);
-
+  console.log(loggedIn);
   return (
     <>
       <div className={`dropdown-container ${props.class}`}>
@@ -44,12 +44,7 @@ function Dropdown(props) {
           </div>
         </div>
         <div className="dropdown-signout">
-          <NavLink
-            to="/"
-            onClick={() => {
-              if (loggedIn === "true") setLoggedIn(false);
-            }}
-          >
+          <NavLink to="/" onClick={() => setLoggedIn(false)}>
             <i className="fa-solid fa-right-to-bracket signout-icon"></i>
             Sign Out
           </NavLink>

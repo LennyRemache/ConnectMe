@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 function Profile() {
   const location = useLocation();
-  console.log(location.pathname.slice(8, 19));
+
   return (
     <>
       <motion.div
