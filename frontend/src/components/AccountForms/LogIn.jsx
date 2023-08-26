@@ -11,9 +11,11 @@ function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useAtom(statusAtom);
   const navigate = useNavigate();
 
+  // eslint-disable-next-line
   const [userData, setUserData] = useAtom(userAtom);
 
   const handleLogIn = async (e) => {
@@ -30,7 +32,6 @@ function LogIn() {
         setUserData(response.data.user);
         setLoggedIn(true);
         navigate("/profile");
-        console.log(loggedIn, userData);
       })
       .catch((error) => {
         console.log("Log In Failed", error);

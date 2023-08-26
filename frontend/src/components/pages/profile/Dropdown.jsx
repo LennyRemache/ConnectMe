@@ -2,11 +2,14 @@ import React from "react";
 import "../../../styles/pages/profile/Dropdown.css";
 import { NavLink } from "react-router-dom";
 import { useAtom } from "jotai";
-import { statusAtom } from "../../../App";
+import { statusAtom, userAtom } from "../../../App";
 
 function Dropdown(props) {
+  // eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useAtom(statusAtom);
-  console.log(loggedIn);
+  // eslint-disable-next-line
+  const [userData, setUserData] = useAtom(userAtom);
+
   return (
     <>
       <div className={`dropdown-container ${props.class}`}>
@@ -44,7 +47,13 @@ function Dropdown(props) {
           </div>
         </div>
         <div className="dropdown-signout">
-          <NavLink to="/" onClick={() => setLoggedIn(false)}>
+          <NavLink
+            to="/"
+            onClick={() => {
+              setUserData(null);
+              setLoggedIn(false);
+            }}
+          >
             <i className="fa-solid fa-right-to-bracket signout-icon"></i>
             Sign Out
           </NavLink>
