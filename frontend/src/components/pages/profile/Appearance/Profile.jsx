@@ -1,8 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../../styles/pages/profile/Appearance/Profile.css";
+import { useAtom } from "jotai";
+import { userAtom } from "../../../../App";
+import axios from "axios";
 
 function Profile() {
   const [bio, setBio] = useState("");
+  let [title, setTitle] = useState("");
+
+  const [userData] = useAtom(userAtom);
+
+  const handleTitleChange = async () => {
+    if (title === "") setTitle(`@${userData.userName}`);
+
+    const user = {
+      profile: {
+        title,
+      },
+    };
+
+    await axios
+      .get(`https://connectme-server.onrender.com/user/${userData._id}`)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
@@ -19,7 +44,12 @@ function Profile() {
             </div>
           </div>
           <div className="appearance-title">
-            <input type="text" />
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              onBlur={handleTitleChange}
+            />
             <label>Profile Title</label>
           </div>
           <div className="appearance-bio">
