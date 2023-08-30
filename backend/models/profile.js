@@ -6,9 +6,11 @@ const profileSchema = new mongoose.Schema(
   {
     links: {
       type: [linkSchema],
+      default: [],
     },
     appearance: {
       type: appearanceSchema,
+      default: {},
     },
   },
   { timestamps: true }

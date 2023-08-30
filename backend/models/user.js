@@ -37,6 +37,7 @@ const userSchema = new mongoose.Schema(
     },
     profile: {
       type: profileSchema,
+      default: {},
     },
   },
   { timestamps: true } // provides dates and time of when a new user is CRUD
