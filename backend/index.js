@@ -19,8 +19,6 @@ app.use(cors()); // makes it possible to make api calls from the client side
 
 /* ROUTES */
 app.use("/auth", authRoutes);
-
-// GET DATA
 app.use("/user", userRoutes);
 
 app.listen(process.env.PORT, (req, res) => {
