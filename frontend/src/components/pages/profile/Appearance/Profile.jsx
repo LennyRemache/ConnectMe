@@ -14,7 +14,9 @@ function Profile() {
     if (title === "") setTitle(`@${userData.userName}`);
 
     await axios
-      .put(`https://connectme-server.onrender.com/user/${userData._id}`, title)
+      .put(`https://connectme-server.onrender.com/user/${userData._id}`, {
+        title,
+      })
       .then((response) => {
         console.log(response.data);
       })
