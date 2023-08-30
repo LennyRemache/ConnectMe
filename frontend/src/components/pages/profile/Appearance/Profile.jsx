@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../../../styles/pages/profile/Appearance/Profile.css";
 import { useAtom } from "jotai";
 import { userAtom } from "../../../../App";
