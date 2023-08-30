@@ -13,14 +13,8 @@ function Profile() {
   const handleTitleChange = async () => {
     if (title === "") setTitle(`@${userData.userName}`);
 
-    const user = {
-      profile: {
-        title,
-      },
-    };
-
     await axios
-      .get(`https://connectme-server.onrender.com/user/${userData._id}`)
+      .put(`https://connectme-server.onrender.com/user/${userData._id}`, title)
       .then((response) => {
         console.log(response.data);
       })
