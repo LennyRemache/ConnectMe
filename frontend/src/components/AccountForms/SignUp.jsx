@@ -3,6 +3,8 @@ import axios from "axios";
 import "../../styles/AccountForms/SignUp.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
+import { statusAtom, userAtom } from "../../App";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -12,6 +14,11 @@ function SignUp() {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
+  // eslint-disable-next-line
+  const [loggedIn, setLoggedIn] = useAtom(statusAtom);
+  // eslint-disable-next-line
+  const [userData, setUserData] = useAtom(userAtom);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -27,6 +34,8 @@ function SignUp() {
       .post("https://connectme-server.onrender.com/auth/register", user)
       .then((response) => {
         console.log("Success!", response.data);
+        setUserData(response.data);
+        setLoggedIn(true);
         navigate("/profile");
       })
       .catch((error) => {
