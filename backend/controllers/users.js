@@ -13,7 +13,7 @@ export const updateUser = async (req, res) => {
   try {
     const title = req.body.title;
     const user = await User.findById(req.params.id);
-    user.profile.appearance.title = title;
+    user.firstName = title;
     await user.save();
     res.status(201).json({ user });
   } catch (err) {

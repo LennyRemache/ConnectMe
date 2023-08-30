@@ -8,7 +8,7 @@ const appearanceSchema = new mongoose.Schema(
     },
     title: {
       type: String,
-      default: "@username",
+      default: "",
       min: 0,
       max: 30,
     },
