@@ -6,9 +6,9 @@ import axios from "axios";
 
 function Profile() {
   const [bio, setBio] = useState("");
-  const [title, setTitle] = useState("");
 
   const [userData] = useAtom(userAtom);
+  const [title, setTitle] = useState("");
 
   const handleTitleChange = async () => {
     if (title === "") setTitle(`@${userData.userName}`);
