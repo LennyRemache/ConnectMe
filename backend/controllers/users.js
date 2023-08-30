@@ -11,7 +11,7 @@ export const getUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const title = req.body;
+    const title = req.body.title;
     const user = await User.findById(req.params.id);
     user.profile.appearance.title = title;
     await user.save();
