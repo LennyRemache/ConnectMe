@@ -34,7 +34,7 @@ function SignUp() {
       .post("https://connectme-server.onrender.com/auth/register", user)
       .then((response) => {
         console.log("Success!", response.data);
-        setUserData(response.data);
+        setUserData(response.data.userName);
         setLoggedIn(true);
         navigate("/profile");
       })

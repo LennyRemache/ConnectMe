@@ -29,7 +29,7 @@ function LogIn() {
       .post("https://connectme-server.onrender.com/auth/login", user)
       .then((response) => {
         console.log("Logged In");
-        setUserData(response.data.user);
+        setUserData(response.data.user.userName);
         setLoggedIn(true);
         navigate("/profile");
       })

@@ -7,14 +7,15 @@ import axios from "axios";
 function Profile() {
   const [bio, setBio] = useState("");
 
-  const [userData] = useAtom(userAtom);
-  const [title, setTitle] = useState("");
+  const [userData, setUserData] = useAtom(userAtom);
+  console.log(userData);
+  const [title, setTitle] = useState(""); ///////////
 
   const handleTitleChange = async () => {
     if (title === "") setTitle(`@${userData.userName}`);
 
     await axios
-      .put(`https://connectme-server.onrender.com/user/${userData._id}`, {
+      .put(`https://connectme-server.onrender.com/user/${userData}`, {
         title,
       })
       .then((response) => {
