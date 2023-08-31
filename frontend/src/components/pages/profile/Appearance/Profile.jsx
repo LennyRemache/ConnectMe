@@ -7,7 +7,7 @@ import axios from "axios";
 function Profile() {
   const [bio, setBio] = useState("");
 
-  const [userData, setUserData] = useAtom(userAtom);
+  const [userData] = useAtom(userAtom);
   console.log(userData);
   const [title, setTitle] = useState(""); ///////////
 
