@@ -14,7 +14,7 @@ export const updateUser = async (req, res) => {
     const { title } = req.body;
     const user = await User.find({ userName: req.params.userName });
     user[0].profile.appearance.title = title;
-    await user.save();
+    await user[0].save();
     res.status(201).json({ user });
   } catch (err) {
     res.status(400).json({ err: err.message });
