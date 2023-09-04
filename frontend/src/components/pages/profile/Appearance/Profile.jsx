@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../../../styles/pages/profile/Appearance/Profile.css";
 import { useAtom } from "jotai";
 import { userAtom } from "../../../../App";
@@ -6,20 +6,31 @@ import axios from "axios";
 
 function Profile() {
   const [bio, setBio] = useState("");
-
   const [userData] = useAtom(userAtom);
-  console.log(userData);
-  const [title, setTitle] = useState(""); ///////////
+  const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    getTitle();
+  }, []);
+
+  const getTitle = async () =>
+    await axios
+      .get(`https://connectme-server.onrender.com/user/${userData}`)
+      .then((response) => {
+        console.log(response.data.user.profile.appearance.title);
+        setTitle(response.data.user.profile.appearance.title);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
   const handleTitleChange = async () => {
-    if (title === "") setTitle(`@${userData.userName}`);
-
     await axios
       .put(`https://connectme-server.onrender.com/user/${userData}`, {
-        title,
+        title: title === "" ? `@${userData}` : title,
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.user);
       })
       .catch((error) => {
         console.log(error);
