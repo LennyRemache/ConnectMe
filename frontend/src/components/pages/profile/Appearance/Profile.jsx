@@ -10,27 +10,42 @@ function Profile() {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    const getTitle = async () => {
+    const getProfileData = async () => {
       await axios
         .get(`https://connectme-server.onrender.com/user/${userData}`)
         .then((response) => {
           setTitle(response.data.user.profile.appearance.title);
+          setBio(response.data.user.profile.appearance.bio);
         })
         .catch((error) => {
           console.log(error);
         });
     };
-    getTitle();
+    getProfileData();
   }, [userData]);
 
   const handleTitleChange = async () => {
     await axios
-      .put(`https://connectme-server.onrender.com/user/${userData}`, {
+      .put(`https://connectme-server.onrender.com/user/${userData}/title`, {
         title: title === "" ? `@${userData}` : title,
       })
       .then((response) => {
         console.log(response.data.user);
         setTitle(response.data.user.profile.appearance.title);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleBioChange = async () => {
+    await axios
+      .put(`https://connectme-server.onrender.com/user/${userData}/bio`, {
+        bio,
+      })
+      .then((response) => {
+        console.log(response.data.user);
+        setBio(response.data.user.profile.appearance.bio);
       })
       .catch((error) => {
         console.log(error);
@@ -65,6 +80,7 @@ function Profile() {
               rows="4"
               value={bio}
               onChange={(e) => setBio(e.target.value)}
+              onBlur={handleBioChange}
             ></textarea>
             <label className="appearance-bio-label">Bio</label>
             <label className="appearance-bio-count">{bio.length} / 80</label>
