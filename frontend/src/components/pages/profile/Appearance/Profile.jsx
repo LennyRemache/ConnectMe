@@ -45,7 +45,6 @@ function Profile() {
       })
       .then((response) => {
         console.log(response.data.user);
-        setBio(response.data.user.profile.appearance.bio);
       })
       .catch((error) => {
         console.log(error);
