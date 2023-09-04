@@ -9,7 +9,7 @@ import Profile from "./components/pages/profile/Profile";
 
 const storage = createJSONStorage(() => sessionStorage);
 const statusAtom = atomWithStorage("logged_in", false, storage);
-const userAtom = atomWithStorage("dotcom_user", null, storage);
+const userAtom = atomWithStorage("dotcom_user", undefined, storage);
 
 function App() {
   const location = useLocation();
