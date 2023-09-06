@@ -6,6 +6,7 @@ import {
   updatePicture,
 } from "../controllers/users.js";
 import { upload } from "../cloudinary/multer.js";
+require("../cloudinary/cloudinary.config.js");
 
 const router = express.Router();
 

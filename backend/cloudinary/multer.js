@@ -1,10 +1,9 @@
 import multer from "multer";
-import cloudinary from "./cloudinary.config.js";
-import { CloudinaryStorage } from "multer-storage-cloudinary";
+import cloudinary from "cloudinary";
+import cloudinaryStorage from "multer-storage-cloudinary";
 
 // a multer storage engine for Cloudinary
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary, // A Cloudinary API object configured in config file
+const storage = cloudinaryStorage({
   folder: "profile_pics",
   allowedFormats: ["jpg", "png"],
   transformation: [
@@ -14,6 +13,7 @@ const storage = new CloudinaryStorage({
       crop: "limit",
     },
   ],
+  cloudinary: cloudinary, // A Cloudinary API object configured in config file
 });
 
 export const upload = multer({ storage: storage }); // middleware for uploading files using multer
