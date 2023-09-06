@@ -39,7 +39,7 @@ export const updatePicture = async (req, res) => {
     const imagePath = req.file;
     user.profile.appearance.picturePath = `${imagePath}`;
     await user.save();
-    res.status(201).json({ user });
+    res.status(201).json(req.body);
   } catch (err) {
     res.status(400).json({ err: err.message });
   }
