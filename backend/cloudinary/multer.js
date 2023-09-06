@@ -5,6 +5,7 @@ import { CloudinaryStorage } from "multer-storage-cloudinary";
 // a multer storage engine for Cloudinary
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary, // A Cloudinary API object configured in config file
+  folder: "profile_pics",
   allowedFormats: ["jpg", "png"],
   transformation: [
     {
