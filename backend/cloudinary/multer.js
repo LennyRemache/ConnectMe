@@ -1,5 +1,5 @@
 import multer from "multer";
-import { v2 as cloudinary } from "cloudinary";
+import cloudinary from "./cloudinary.config";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
 
 // a multer storage engine for Cloudinary
