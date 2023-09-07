@@ -13,6 +13,6 @@ const router = express.Router();
 router.get("/:userName", getUser);
 router.put("/:userName/title", updateTitle);
 router.put("/:userName/bio", updateBio);
-router.put("/:userName/picture", upload.single("profilePic"), updatePicture);
+router.put("/:userName/picture", upload.single("file"), updatePicture);
 
 export default router;
